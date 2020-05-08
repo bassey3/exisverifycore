@@ -1,0 +1,12 @@
+# Database container for running tests locally.
+version: '2'
+
+services:
+  exis-verifycore-db:
+    container_name: exis-verifycore-db
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true

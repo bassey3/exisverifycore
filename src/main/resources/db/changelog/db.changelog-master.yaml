@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: lovejoy
+      changes:
+        - createTable:
+            tableName: persona
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: externalId
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: firstName
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lastName
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: otherName
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+#  - include:
+#      file: db/changelog/db.changelog-1.0.yaml
