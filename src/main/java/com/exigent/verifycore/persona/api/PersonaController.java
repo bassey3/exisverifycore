@@ -24,7 +24,7 @@ public class PersonaController{
     @PostMapping("/create")
     @ResponseBody
     public String createPersona(@RequestBody PersonaDto dto) throws JsonProcessingException{
-        //personaService.savePersona(dto);
+        personaService.savePersona(dto);
         ObjectMapper objectMapper = new ObjectMapper();
         var message = objectMapper.writeValueAsString(dto);
         rabbitTemplate.convertAndSend("persona", message);

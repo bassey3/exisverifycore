@@ -15,7 +15,7 @@ public class PersonaListener{
     @Autowired
     PersonaServiceImpl personaService;
 
-    @RabbitListener(queues = "persona")
+    //@RabbitListener(queues = "persona")
     public void receivePersona(String message) throws JsonProcessingException{
 
         System.out.println("Received <" + message + ">");
